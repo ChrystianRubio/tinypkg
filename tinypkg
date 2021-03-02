@@ -21,7 +21,7 @@ export LC_ALL='C'; export LANG='C'
 basename() { printf '%s\n' "${1##*/}" ;} # An alternative to the real basename.
 dirname() { printf '%s\n' "${1%/*}" ;} # An alternative to the real dirname.
 die() { printf '%s\n' "$@"; exit 1 ;} # All errors msgs ;)
-NULL() { [ "$1" ] && { echo "Name of package... SOFTWARE-VERSION.${pkgFormat}"; exit 1 ;} ;}
+NULL() { [ -z "$1" ] && { echo "Name of package... SOFTWARE-VERSION.${pkgFormat}"; exit 1 ;} ;}
 # Check package extension and blabla.
 CHECKEXT() {
   # Created with tinypkg?
